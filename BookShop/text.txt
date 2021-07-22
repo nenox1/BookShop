@@ -1,0 +1,25 @@
+The Iliad
+Homer
+Americana
+35.26
+25
+The Odissey
+Homer
+Toronto
+31.51
+38
+The Prometheus
+Aeschylus
+Americana
+28.76
+325
+Almagest
+Ptolemy
+Americana cd
+53.25
+4
+Guide for the perplexed
+Maimonides, Moses
+Americana
+71.01
+5
