@@ -63,14 +63,20 @@ void BookShop::SaveToFile()
 
 void BookShop::PrintAllMembers()
 {    
-    for (int i = 0; i < mainVec.size(); i++) {       
+    system("CLS");
+    cout << "\n";
+
+    for (int i = 0; i < mainVec.size(); i++) {
+        cout << "Book no: " << i + 1 << "\n";
         cout << mainVec[i].getTitle() << "\n";
         cout << mainVec[i].getAuthor() << "\n";
         cout << mainVec[i].getPublisher() << "\n";
+        cout << "Price: ";
         cout << mainVec[i].getPrice() << "\n";
+        cout << "Stock: ";
         cout << mainVec[i].getStock() << "\n";
+        cout << "-----------------------------\n\n";
     }
-  
 
 }
 
@@ -213,27 +219,30 @@ void BookShop::editData()
     if (pos != -1)
     {
         printFoundMember(pos);
+
         
-        cout << "Input new title, press enter to keep old title: ";
-        if (!getline(cin, newTitle).width() == 0) {
-            mainVec[pos].inputTitle();
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+         cout << "Input new title, press enter to keep old title: ";
+         getline(cin, newTitle);
+        if (newTitle.length() != 0) {
+            mainVec[pos].setTitle(newTitle);
+          /*  cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');*/
+
         }
 
         cout << "Input new author, press enter to keep old author: ";
-        if (!getline(cin, newAuthor).width() == 0) {
-            mainVec[pos].inputAuthor();
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }  
+        getline(cin, newAuthor);
+        if (newAuthor.length() != 0) {        
+            mainVec[pos].setAuthor(newAuthor);
+        }
 
         cout << "Input new publisher, press enter to keep old publisher: ";
-        if (!getline(cin, newPublisher).width() == 0) {
-            mainVec[pos].inputPublisher();
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        getline(cin, newPublisher);
+        if (newPublisher.length() != 0) {
+            mainVec[pos].setPublisher(newPublisher);
+            
         }
+
         cout << "Input new price, press enter to keep old price: ";
         if (cin.peek() != '\n') {
             mainVec[pos].inputPrice();
@@ -248,7 +257,9 @@ void BookShop::editData()
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
       
-        system("pause");
+       
+       cout << "\n\nBook edited." << endl;
+       system("pause");
     }
     else {
         cout << "Book not found." << endl;

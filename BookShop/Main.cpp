@@ -71,7 +71,7 @@ int main()
                 shop.editData();
                 break;
             case 5:
-                cout << "Printam sve knjige!!!" << endl;
+                shop.PrintAllMembers();
                 system("pause");                
                 break;
             case 6:

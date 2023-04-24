@@ -21,6 +21,7 @@ void Book::inputAuthor()
 {	
 	getline(cin, author);
 
+
 }
 void Book::setAuthor(string &aut)
 {
@@ -37,6 +38,8 @@ void Book::inputTitle()
 	//cout << "Enter book title:";
 	getline(cin, title);
 
+
+
 }
 void Book::setTitle(string &tit)
 {
@@ -52,6 +55,7 @@ string Book::getTitle()
 void Book::inputPublisher()
 {
 	getline(cin, publisher);
+
 }
 
 void Book::setPublisher(string& pub)
