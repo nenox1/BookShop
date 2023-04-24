@@ -19,12 +19,13 @@ int mainMenuPrint() {
         << "\n2. Buy Book"
         << "\n3. Search For Book"
         << "\n4. Edit Details Of Book"
-        << "\n5. Exit"
+        << "\n5. Print all Books"
+        << "\n6. Exit"
         << "\n\nEnter your Choice: ";
     cin >> choice;
 
     //checks if choices are in limits of menu
-    while (!cin || choice > 5 || choice < 0) {
+    while (!cin || choice > 6 || choice < 0) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input please enter a valid input:";
@@ -70,6 +71,10 @@ int main()
                 shop.editData();
                 break;
             case 5:
+                cout << "Printam sve knjige!!!" << endl;
+                system("pause");                
+                break;
+            case 6:
                 cout << "Exiting...";                
                 break;
             default:
@@ -78,7 +83,7 @@ int main()
             }
 
             system("CLS");
-        } while (choice != 5);
+        } while (choice != 6);
           
         //shop.printFoundMember(5);
 
